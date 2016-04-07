@@ -14,7 +14,7 @@ fs.readdirSync(__dirname)
 })
 .forEach(function(file){
     var model = require(path.join(__dirname, file));
-    db[model.name] = model;
+    db[model.modelName] = model;
 });
 
 db.mongoose = mongoose;

@@ -4,7 +4,11 @@ var express = require('express'),
     router = express.Router();
 
 // list users
-router.get('/list/:page/:limit', function(req, res){
+router.get('/create', function(req, res){
+    var user = new db.User({});
+    user.save(function(err){
+        console.log(err);
+    });
     res.send(JSON.stringify({}));
 });
 
