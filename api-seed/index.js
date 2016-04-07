@@ -5,6 +5,9 @@ var fs = require('fs');
 var app = express();
 var logger = require('./helpers/logger');
 
+// import routers
+app.use(require('./apis'));
+
 var server = app.listen('3000', function () {
     var host = server.address().address;
     var port = server.address().port;
