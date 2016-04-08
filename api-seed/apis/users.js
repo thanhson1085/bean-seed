@@ -3,13 +3,17 @@ var express = require('express'),
     db = require('../models'),
     router = express.Router();
 
-// list users
-router.get('/create', function(req, res){
-    var user = new db.User({});
-    user.save(function(err){
-        console.log(err);
+// create a new user
+router.post('/create', function(req, res){
+    var user = new db.User(req.body);
+    user.save(function(error, new_user){
+        if (error) {
+            return res.status(406).send(JSON.stringify({error}));
+        }
+        delete new_user['salt'];
+        delete new_user['password'];
+        res.send(JSON.stringify(new_user));
     });
-    res.send(JSON.stringify({}));
 });
 
 module.exports = router;
