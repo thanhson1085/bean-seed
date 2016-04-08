@@ -5,7 +5,7 @@ var fs = require('fs'),
     db = {},
     config = require('config');
 
-mongoose.connect('mongodb://localhost:27017/test');
+mongoose.connect(config.get('db.uri'));
 
 // import all file in this dir, except index.js
 fs.readdirSync(__dirname)
