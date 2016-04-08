@@ -7,6 +7,7 @@ var Schema = mongoose.Schema;
 var User = new Schema({
     username: {
         type: String,
+        index: true,
         require: true
     },
     email: {
