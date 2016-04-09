@@ -2,6 +2,7 @@
 
 var express = require('express');
 var fs = require('fs');
+var path = require('path');
 var config = require('config');
 var app = express();
 var bodyParser = require('body-parser');
@@ -13,6 +14,14 @@ app.use(bodyParser.json());
 
 // import routers
 app.use(require('./apis'));
+
+// add-on swagger-editor
+app.use('/swagger', express.static('./node_modules/swagger-editor/dist'));
+app.use('/', express.static('./server/docs'));
+app.get('/docs', function(req, res){
+    var docs = yaml.safeLoad(fs.readFileSync('./server/docs/swagger.yml', 'utf8'));
+    res.send(JSON.stringify(docs));
+});
 
 // start server
 var server = app.listen(config.get('server.port'), config.get('server.host'), function () {

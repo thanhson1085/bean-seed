@@ -1,0 +1,58 @@
+swagger: '2.0'
+info:
+    title: User API
+    description: Happy to code User API
+    version: '1.0.0'
+schemes:
+    - http
+basePath: /api/v1
+produces:
+    - application/json
+paths:
+    /users/create:
+        post:
+            summary: Create a new user account
+            description: |
+                Create a new user account
+            parameters:
+                - name: data
+                  in: body
+                  description: json body data to create new user
+                  required: true
+                  schema:
+                      type: string
+                      required:
+                          - username
+                          - email
+                          - password
+                          - firstname
+                          - lastname
+                      properties:
+                          username:
+                              type: string
+                              description: User Name
+                          password:
+                              type: string
+                              description: Password of User
+                          email:
+                              type: string
+                              description: Email of User
+                          firstname:
+                              type: string
+                              description: First Name
+                          lastname:
+                              type: string
+                              description: Last Name
+            responses:
+                200:
+                    description: Returns a access token
+                401:
+                    description: Unauthorized
+                400:
+                    description: Bad Request
+                406:
+                    description: Not Acceptable
+                500:
+                    description: Server Internal error
+            tags:
+                - Users
