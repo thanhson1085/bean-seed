@@ -5,6 +5,7 @@ var fs = require('fs');
 var path = require('path');
 var config = require('config');
 var app = express();
+var yaml = require('js-yaml');
 var bodyParser = require('body-parser');
 var logger = require('./helpers/logger');
 
@@ -12,16 +13,16 @@ var logger = require('./helpers/logger');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// import routers
-app.use(require('./apis'));
-
 // add-on swagger-editor
-app.use('/swagger', express.static('./node_modules/swagger-editor/dist'));
-app.use('/', express.static('./server/docs'));
+app.use('/swagger', express.static('./node_modules/swagger-editor'));
+app.use('/', express.static('./docs'));
 app.get('/docs', function(req, res){
-    var docs = yaml.safeLoad(fs.readFileSync('./server/docs/swagger.yml', 'utf8'));
+    var docs = yaml.safeLoad(fs.readFileSync('./docs/swagger.yml', 'utf8'));
     res.send(JSON.stringify(docs));
 });
+
+// import routers
+app.use(require('./apis'));
 
 // start server
 var server = app.listen(config.get('server.port'), config.get('server.host'), function () {
