@@ -20,7 +20,6 @@ paths:
                   description: json body data to create new user
                   required: true
                   schema:
-                      type: string
                       required:
                           - username
                           - email
