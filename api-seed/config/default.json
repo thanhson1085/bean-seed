@@ -10,5 +10,6 @@
         "level": "debug",
         "handleExceptions": false
     },
-    "token_expire": 86400
+    "token_expire": 86400,
+    "time_format": "YYYY-DD-MM H:mm:ss:SSS"
 }
