@@ -89,3 +89,61 @@ paths:
                     description: Server Internal error
             tags:
                 - Users
+
+    /users/get/{id}:
+        get:
+            summary: Get a user
+            description: |
+                Get a user by Id
+            parameters:
+                - name: id
+                  in: path
+                  description: User Id
+                  required: true
+                  type: string
+                  format: string
+            responses:
+                200:
+                    description: OK
+                401:
+                    description: Unauthorized
+                400:
+                    description: Bad Request
+                406:
+                    description: Not Acceptable
+                500:
+                    description: Server Internal error
+            tags:
+                - Users
+
+    /users/list/{page}/{limit}:
+        get:
+            summary: Get list of user
+            description: |
+                Get list of user with page and limit
+            parameters:
+                - name: page
+                  in: path
+                  description: Page Number
+                  required: true
+                  type: string
+                  format: string
+                - name: limit
+                  in: path
+                  description: Limit Number
+                  required: true
+                  type: string
+                  format: string
+            responses:
+                200:
+                    description: OK
+                401:
+                    description: Unauthorized
+                400:
+                    description: Bad Request
+                406:
+                    description: Not Acceptable
+                500:
+                    description: Server Internal error
+            tags:
+                - Users

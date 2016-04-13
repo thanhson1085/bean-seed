@@ -14,7 +14,47 @@ router.post('/create', function(req, res){
         if (error) {
             return res.status(406).send(JSON.stringify({error}));
         }
+        // remove security attributes
+        new_user = user.toObject();
+        if (new_user) {
+            delete new_user.hashed_password;
+            delete user.salt;
+        }
         res.send(JSON.stringify(new_user));
+    });
+});
+
+// get a user by id
+router.get('/get/:id', function(req, res){
+    logger.debug('Get User By Id', req.params.id);
+    db.User.findOne({
+        _id: req.params.id
+    }).then(function(user){
+        // remove security attributes
+        user = user.toObject();
+        if (user) {
+            delete user.hashed_password;
+            delete user.salt;
+        }
+        res.send(JSON.stringify(user));
+    }).catch(function(e){
+        res.status(500).send(JSON.stringify(e));
+    });
+});
+
+// get list of users
+router.get('/list/:page/:limit', function(req, res){
+    var limit = (req.params.limit)? req.params.limit: 10;
+    var skip = (req.params.page)? limit * (req.params.page - 1): 0;
+    db.User
+    .find()
+    .skip(skip)
+    .limit(limit)
+    .desc('_id')
+    .then(function(users) {
+        res.send(JSON.stringify(users));
+    }).catch(function(e) {
+        res.status(500).send(JSON.stringify(e));
     });
 });
 
