@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var CreateUpdatedAt = require('mongoose-timestamp');
 
 var Token = new Schema({
     username: {
@@ -10,5 +11,7 @@ var Token = new Schema({
     token: String,
     expired_at: String
 });
+
+Token.plugin(CreateUpdatedAt);
 
 module.exports = mongoose.model('Token', Token);
