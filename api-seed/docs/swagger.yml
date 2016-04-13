@@ -9,6 +9,40 @@ basePath: /api/v1
 produces:
     - application/json
 paths:
+    /users/login:
+        post:
+            summary: Login API
+            description: |
+                API for User Login
+            parameters:
+                - name: data
+                  in: body
+                  description: json body data for user login
+                  required: true
+                  schema:
+                      required:
+                          - username
+                          - password
+                      properties:
+                          username:
+                              type: string
+                              description: User Name
+                          password:
+                              type: string
+                              description: Password of User
+            responses:
+                200:
+                    description: OK
+                401:
+                    description: Unauthorized
+                400:
+                    description: Bad Request
+                406:
+                    description: Not Acceptable
+                500:
+                    description: Server Internal error
+            tags:
+                - Users
     /users/create:
         post:
             summary: Create a new user account
