@@ -8,7 +8,7 @@ var Token = new Schema({
         require: true
     },
     token: String,
-    expireAt: String
+    expired_at: String
 });
 
 module.exports = mongoose.model('Token', Token);

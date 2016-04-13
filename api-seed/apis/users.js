@@ -35,21 +35,21 @@ router.post('/login', function(req, res){
                 crypto.randomBytes(64, function(ex, buf) {
                     var token = buf.toString('base64');
                     var today = moment.utc();
-                    var tomorrow = moment(today).add('seconds', config.get('token_expire'));
+                    var tomorrow = moment(today).add(config.get('token_expire'), 'seconds').format(config.get('time_format'));
                     var token = new db.Token({
                         username: username,
                         token: token,
-                        expiredAt: tomorrow
+                        expired_at: tomorrow.toString()
                     });
                     token.save(function(error, to){
-                        res.send(JSON.stringify(to));
+                        return res.send(JSON.stringify(to));
                     });
                 });
             }
             res.send(JSON.stringify({
                 token: t.token,
                 id: user.id,
-                expiredAt: t.expiredAt
+                expired_at: t.expired_at
             }));
         });
     }).catch(function(e){
