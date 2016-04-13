@@ -9,5 +9,6 @@
     "logs": {
         "level": "debug",
         "handleExceptions": false
-    }
+    },
+    "token_expire": 86400
 }
