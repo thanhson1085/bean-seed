@@ -71,7 +71,7 @@ router.post('/login', function(req, res){
         db.Token.findOne({
             username: username
         }).then(function(t){
-            if (!t){
+            t.remove(function() {
                 crypto.randomBytes(64, function(ex, buf) {
                     var token = buf.toString('base64');
                     var today = moment.utc();
@@ -85,12 +85,7 @@ router.post('/login', function(req, res){
                         return res.send(JSON.stringify(to));
                     });
                 });
-            }
-            res.send(JSON.stringify({
-                token: t.token,
-                id: user.id,
-                expired_at: t.expired_at
-            }));
+            });
         });
     }).catch(function(e){
         res.status(401).send(JSON.stringify(e));

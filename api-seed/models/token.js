@@ -8,7 +8,11 @@ var Token = new Schema({
         index: true,
         require: true
     },
-    token: String,
+    token: {
+        type: String,
+        index: true,
+        require: true
+    },
     expired_at: String
 });
 
