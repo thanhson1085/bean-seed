@@ -50,7 +50,7 @@ router.get('/list/:page/:limit', function(req, res){
     .find()
     .skip(skip)
     .limit(limit)
-    .desc('_id')
+    .sort({'_id': 'desc'})
     .then(function(users) {
         res.send(JSON.stringify(users));
     }).catch(function(e) {
