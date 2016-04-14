@@ -21,6 +21,9 @@ app.get('/docs', function(req, res){
     res.send(JSON.stringify(docs));
 });
 
+// import middlewares
+app.use(require('./middlewares/auth'));
+
 // import routers
 app.use(require('./apis'));
 
