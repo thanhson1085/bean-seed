@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - '4.3'
+before_install:
+  - npm install -g mongodb-runner
+before_script:
+  - mongodb-runner start
+script:
+  - npm test
+after_script:
+  - mongodb-runner stop
