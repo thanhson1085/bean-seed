@@ -4,7 +4,7 @@
   "description": "A Seed Service with NodeJS and MongoDB",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test istanbul cover mocha && codecov"
+    "test": "NODE_ENV=test mocha"
   },
   "repository": {
     "type": "git",
@@ -22,11 +22,9 @@
   "homepage": "https://github.com/thanhson1085/api-seed#readme",
   "dependencies": {
     "body-parser": "^1.15.0",
-    "codecov": "^1.0.1",
     "config": "^1.19.0",
     "crypto": "0.0.3",
     "express": "^4.13.4",
-    "istanbul": "^0.4.3",
     "js-yaml": "^3.5.5",
     "lodash": "^4.11.0",
     "mocha": "^2.4.5",
