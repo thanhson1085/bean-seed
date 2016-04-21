@@ -33,3 +33,5 @@ var server = app.listen(config.get('server.port'), config.get('server.host'), fu
     var port = server.address().port;
     logger.info('Server start at http://%s:%s', host, port);
 });
+
+module.exports = app;
