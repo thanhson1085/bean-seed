@@ -22,6 +22,7 @@
   "homepage": "https://github.com/thanhson1085/api-seed#readme",
   "dependencies": {
     "body-parser": "^1.15.0",
+    "chai": "^3.5.0",
     "config": "^1.19.0",
     "crypto": "0.0.3",
     "express": "^4.13.4",

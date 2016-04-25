@@ -1,6 +1,6 @@
 var chai = require('chai');
 var should = chai.should();
-var User = require('../apis/models/user');
+var User = require('../models/user');
 
 describe('User Model', function() {
     it('should create a new user', function(done) {
