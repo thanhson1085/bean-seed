@@ -14,6 +14,54 @@ securityDefinitions:
     name: Authorization
     in: header
 paths:
+    /config/get:
+        get:
+            summary: Get App Configuration
+            description: |
+                Get Application Configuration
+            responses:
+                200:
+                    description: OK
+                401:
+                    description: Unauthorized
+                400:
+                    description: Bad Request
+                406:
+                    description: Not Acceptable
+                500:
+                    description: Server Internal error
+            tags:
+                - Config
+
+    /config/create:
+        post:
+            summary: Create App Configuration
+            description: |
+                Create Application Configuration
+            security:
+                - Bearer: []
+            parameters:
+                - name: data
+                  in: body
+                  description: json body data to create app config
+                  required: true
+                  schema:
+                      type: object
+                      description: Aplication Configuration
+            responses:
+                200:
+                    description: Returns a access token
+                401:
+                    description: Unauthorized
+                400:
+                    description: Bad Request
+                406:
+                    description: Not Acceptable
+                500:
+                    description: Server Internal error
+            tags:
+                - Config
+
     /users/login:
         post:
             summary: Login API
