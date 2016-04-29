@@ -1,5 +1,5 @@
-node_modules
-*.swp
-*.swo
-dl.mongodb.org
-coverage
+/node_modules
+/dist
+/.tmp
+/.sass-cache
+/bower_components
