@@ -10,6 +10,12 @@
         "level": "debug",
         "handleExceptions": false
     },
+    "redis": {
+        "host": "localhost",
+        "port": "6379",
+        "password": null,
+        "prefix": "api"
+    },
     "unauthorization": [
         "/api/v1/users/login", 
         "/api/v1/users/create",
