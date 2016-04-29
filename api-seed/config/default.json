@@ -16,6 +16,17 @@
         "password": null,
         "prefix": "api"
     },
+    "mailer": {
+        "from": "no-reply@example.com",
+        "host": "smtp.mail.com",
+        "secureConnection": true,
+        "port": 465,
+        "transportMethod": "SMTP",
+        "auth": {
+            "user": "mail.user@mail.com",
+            "pass": "userpass"
+        }
+    },
     "unauthorization": [
         "/api/v1/users/login", 
         "/api/v1/users/create",
