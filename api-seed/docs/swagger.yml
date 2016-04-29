@@ -48,6 +48,10 @@ paths:
                   schema:
                       type: object
                       description: Aplication Configuration
+                      properties:
+                          config_key:
+                              type: string
+                              description: Config Value
             responses:
                 200:
                     description: Returns a access token
