@@ -46,6 +46,34 @@ angular
                 }
             }
         })
+        .state('home', {
+            url:'/home',
+            templateUrl: 'views/main.html',
+            resolve: {
+                loadMyDirectives:function($ocLazyLoad){
+                    return $ocLazyLoad.load(
+                        {
+                            name:'siteSeedApp',
+                            files:[
+                            ]
+                        });
+                }
+            }
+        });
+        .state('home.dashboard', {
+            url:'/home/dashboard',
+            templateUrl: 'views/dashboard/index.html',
+            resolve: {
+                loadMyDirectives:function($ocLazyLoad){
+                    return $ocLazyLoad.load(
+                        {
+                            name:'siteSeedApp',
+                            files:[
+                            ]
+                        });
+                }
+            }
+        });
     }
 ]);
 
