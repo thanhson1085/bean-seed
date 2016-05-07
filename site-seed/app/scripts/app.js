@@ -22,11 +22,11 @@ angular
     function ($stateProvider,$urlRouterProvider,$ocLazyLoadProvider, $httpProvider) {
 
         $ocLazyLoadProvider.config({
-            debug:false,
-            events:true,
+            debug: true,
+            events: true,
         });
 
-        $urlRouterProvider.otherwise('/login');
+        $urlRouterProvider.otherwise('/home/dashboard');
 
         $stateProvider
         .state('login',{
@@ -59,9 +59,10 @@ angular
                         });
                 }
             }
-        });
+        })
         .state('home.dashboard', {
             url:'/home/dashboard',
+            controller:'MainCtrl',
             templateUrl: 'views/dashboard/index.html',
             resolve: {
                 loadMyDirectives:function($ocLazyLoad){
@@ -69,6 +70,7 @@ angular
                         {
                             name:'siteSeedApp',
                             files:[
+                                'scripts/controllers/main.js',
                             ]
                         });
                 }
