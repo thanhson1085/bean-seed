@@ -1,4 +1,5 @@
 'use strict';
+
 // LoginCtrl
 angular.module('siteSeedApp')
 .controller('LoginCtrl', function() {
