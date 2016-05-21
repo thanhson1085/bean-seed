@@ -30,10 +30,10 @@ angular
 
         $stateProvider
         .state('login',{
-            templateUrl:'views/pages/login.html',
+            templateUrl: 'views/pages/login.html',
             controller: 'LoginCtrl',
             controllerAs: 'vm',
-            url:'/login',
+            url: '/login',
             resolve: {
                 loadMyDirectives:function($ocLazyLoad){
                     return $ocLazyLoad.load(
@@ -47,7 +47,7 @@ angular
             }
         })
         .state('home', {
-            url:'/home',
+            url: '/home',
             templateUrl: 'views/main.html',
             resolve: {
                 loadMyDirectives:function($ocLazyLoad){
@@ -55,22 +55,25 @@ angular
                         {
                             name:'siteSeedApp',
                             files:[
+                                'scripts/controllers/main.js',
+                                'scripts/directives/header/header.js',
+                                'scripts/directives/sidebar/sidebar.js'
                             ]
                         });
                 }
             }
         })
         .state('home.dashboard', {
-            url:'/home/dashboard',
-            controller:'MainCtrl',
-            templateUrl: 'views/dashboard/index.html',
+            url: '/home/dashboard',
+            controller: 'MainCtrl',
+            templateUrl: 'views/dashboard/home.html',
             resolve: {
-                loadMyDirectives:function($ocLazyLoad){
+                loadMyDirectives: function($ocLazyLoad){
                     return $ocLazyLoad.load(
                         {
                             name:'siteSeedApp',
                             files:[
-                                'scripts/controllers/main.js',
+                                'scripts/controllers/main.js'
                             ]
                         });
                 }
