@@ -5,7 +5,6 @@ angular.module('siteSeedApp')
     return {
         templateUrl:'views/sidebar/sidebar.html',
         restrict: 'E',
-        replace: true,
         scope: {
         },
         controller: function() {

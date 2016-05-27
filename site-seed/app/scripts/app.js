@@ -55,7 +55,6 @@ angular
                         {
                             name:'siteSeedApp',
                             files:[
-                                'scripts/controllers/main.js',
                                 'scripts/directives/header/header.js',
                                 'scripts/directives/sidebar/sidebar.js'
                             ]
@@ -64,7 +63,7 @@ angular
             }
         })
         .state('home.dashboard', {
-            url: '/home/dashboard',
+            url: '/dashboard',
             controller: 'MainCtrl',
             templateUrl: 'views/dashboard/home.html',
             resolve: {
