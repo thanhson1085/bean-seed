@@ -316,18 +316,19 @@ module.exports = function (grunt) {
     //     }
     //   }
     // },
-    // uglify: {
-    //   dist: {
-    //     files: {
-    //       '<%= yeoman.dist %>/scripts/scripts.js': [
-    //         '<%= yeoman.dist %>/scripts/scripts.js'
-    //       ]
-    //     }
-    //   }
-    // },
-    // concat: {
-    //   dist: {}
-    // },
+    uglify: {
+        build: {
+            files: [{
+                expand: true,
+                src: '**/*.js',
+                dest: '<%= yeoman.dist %>/scripts',
+                cwd: '<%= yeoman.app %>/scripts'
+            }]
+        },
+        options: {
+            mangle: false
+        },
+    },
 
     imagemin: {
       dist: {
@@ -413,7 +414,7 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '*.html',
             'images/{,*/}*.{webp}',
-            'styles/fonts/{,*/}*.*'
+            'fonts/{,*/}*.*'
           ]
         }, {
           expand: true,
@@ -502,11 +503,10 @@ module.exports = function (grunt) {
     'cdnify',
     'cssmin',
     'uglify',
-    'filerev',
-    'usemin',
+    //'filerev',
+    //'usemin',
     'htmlmin'
   ]);
-
   grunt.registerTask('default', [
     'newer:jshint',
     'newer:jscs',
