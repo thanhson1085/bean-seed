@@ -414,7 +414,7 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '*.html',
             'images/{,*/}*.{webp}',
-            'fonts/{,*/}*.*'
+            'styles/fonts/{,*/}*.*'
           ]
         }, {
           expand: true,
@@ -424,7 +424,10 @@ module.exports = function (grunt) {
         }, {
           expand: true,
           cwd: '.',
-          src: 'bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*',
+          src: [
+              'bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*',
+              'bower_components/font-awesome/fonts/*'
+          ],
           dest: '<%= yeoman.dist %>'
         }]
       },
@@ -504,7 +507,7 @@ module.exports = function (grunt) {
     'cssmin',
     'uglify',
     //'filerev',
-    //'usemin',
+    'usemin',
     'htmlmin'
   ]);
   grunt.registerTask('default', [
