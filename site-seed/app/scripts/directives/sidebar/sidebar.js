@@ -7,7 +7,14 @@ angular.module('siteSeedApp')
         restrict: 'E',
         scope: {
         },
-        controller: function() {
+        controller: function($scope) {
+            $scope.collapse = 0;
+            $scope.check = function(x) {
+                if ($scope.collapse === x) {
+                    return $scope.collapse = 0;
+                }
+                $scope.collapse = x;
+            }
         }
     }
 }]);
