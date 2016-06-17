@@ -26,7 +26,7 @@ angular
             events: true,
         });
 
-        $urlRouterProvider.otherwise('/home/dashboard');
+        $urlRouterProvider.otherwise('/login');
 
         $stateProvider
         .state('login',{
