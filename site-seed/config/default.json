@@ -1,0 +1,7 @@
+{
+    "services": {
+        "users": {
+            "create": "api/v1/users/create"
+        }
+    }
+}
