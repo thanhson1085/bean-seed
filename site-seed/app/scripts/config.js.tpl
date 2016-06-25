@@ -1,8 +1,6 @@
 angular
 .module('siteSeedApp', [
     'ngTouch',
-    'ngResource',
-    'ngCookies',
     'ui.router',
     'oc.lazyLoad'
 ])  
