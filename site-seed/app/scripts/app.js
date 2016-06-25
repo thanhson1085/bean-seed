@@ -9,11 +9,10 @@
  * Main module of the application.
  */
 angular
-.module('siteSeedApp', [
-    'ngTouch',
-    'ui.router',
-    'oc.lazyLoad'
-])
+.module('siteSeedApp') 
+.config(['$resourceProvider', function($resourceProvider) {
+  $resourceProvider.defaults.stripTrailingSlashes = false;
+}])
 .config([
     '$stateProvider',
     '$urlRouterProvider',
@@ -40,7 +39,8 @@ angular
                         {
                             name:'siteSeedApp',
                             files:[
-                                'scripts/controllers/login.js'
+                                'scripts/controllers/login.js',
+                                'scripts/services/users.js'
                             ]
                         });
                 }
