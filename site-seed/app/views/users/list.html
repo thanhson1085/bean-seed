@@ -32,6 +32,12 @@
                         </tbody>
                     </table>
                 </div>
+                <!-- /.table-responsive -->
+                <div class="row">
+                    <div class="pull-right">
+                        <uib-pagination style="margin-right: 20px" total-items="count" items-per-page="limit" ng-model="current_page" ng-change="pageChanged()" max-size="5" boundary-links="true" rotate="false"></uib-pagination>
+                    </div>
+                </div>
             </div>
             <!-- /.panel-body -->
         </div>

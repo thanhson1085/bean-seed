@@ -4,6 +4,7 @@ angular
     'ngResource',
     'ngCookies',
     'ui.router',
+    'ui.bootstrap',
     'oc.lazyLoad'
 ])  
 .constant('APP_CONFIG', /* @echo APP_CONFIG */)
