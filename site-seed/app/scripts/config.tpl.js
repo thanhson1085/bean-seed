@@ -8,5 +8,7 @@ angular
     'oc.lazyLoad',
     'pascalprecht.translate'
 ])  
+/* jshint ignore:start */
 .constant('APP_CONFIG', /* @echo APP_CONFIG */)
+/* jshint ignore:end */
 .value('debug', true);

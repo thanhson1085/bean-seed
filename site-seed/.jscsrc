@@ -1,6 +1,5 @@
 {
-  "requireCamelCaseOrUpperCaseIdentifiers": true,
   "requireCapitalizedConstructors": true,
   "requireParenthesesAroundIIFE": true,
-  "validateQuoteMarks": "'"
+  "excludeFiles": ["app/scripts/config.tpl.js"]
 }
