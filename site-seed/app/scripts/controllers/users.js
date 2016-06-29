@@ -15,4 +15,6 @@ angular.module('siteSeedApp')
             $scope.users = response.rows;
         });
     };
+
+    $scope.forUnitTest = true;
 });

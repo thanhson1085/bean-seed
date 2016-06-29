@@ -6,7 +6,9 @@ angular
     'ui.router',
     'ui.bootstrap',
     'oc.lazyLoad',
-    'pascalprecht.translate'
+    'pascalprecht.translate',
+    'ngAnimate',
+    'angular-loading-bar'
 ])  
 /* jshint ignore:start */
 .constant('APP_CONFIG', /* @echo APP_CONFIG */)

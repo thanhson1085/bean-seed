@@ -2,5 +2,6 @@
 
 // MainCtrl
 angular.module('siteSeedApp')
-  .controller('MainCtrl', function () {
+  .controller('MainCtrl', function ($scope) {
+      $scope.forUnitTest = true;
   });
