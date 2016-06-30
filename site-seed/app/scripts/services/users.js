@@ -42,6 +42,18 @@ angular.module('siteSeedApp').factory('Users', function($resource, $q, APP_CONFI
                 deferred.reject(res);
             });
             return deferred.promise;
+        },
+        get: function(id){
+            var deferred = $q.defer();
+            var url = APP_CONFIG.services.users.get;
+            var Users = $resource(url, {id: id});
+            
+            Users.get(function(res) {
+                deferred.resolve(res);
+            }, function(res) {
+                deferred.reject(res);
+            });
+            return deferred.promise;
         }
     };
 });

@@ -132,6 +132,21 @@ angular
                 }
             }
         })
+        .state('home.users.get', {
+            url: '/users/get/:userId',
+            controller: 'UserDetailCtrl',
+            templateUrl: 'views/users/view.html',
+            resolve: {
+                loadMyDirectives: function($ocLazyLoad){
+                    return $ocLazyLoad.load(
+                        {
+                            name:'siteSeedApp',
+                            files:[
+                            ]
+                        });
+                }
+            }
+        })
         .state('home.user_setting',{
             templateUrl:'views/users/setting.html',
             url:'/users/setting',

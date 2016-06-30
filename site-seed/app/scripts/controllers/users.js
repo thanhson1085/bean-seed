@@ -17,4 +17,6 @@ angular.module('siteSeedApp')
     };
 
     $scope.forUnitTest = true;
+})
+.controller('UserDetailCtrl', function() {
 });
