@@ -334,7 +334,7 @@ module.exports = function (grunt) {
         build: {
             files: [{
                 expand: true,
-                src: '**/*.js',
+                src: ['**/*.js', '!config.tpl.js'],
                 dest: '<%= yeoman.dist %>/scripts',
                 cwd: '<%= yeoman.app %>/scripts'
             }]
@@ -428,6 +428,7 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '*.html',
             'images/{,*/}*.{webp}',
+            'resources/{,*/}*.*',
             'styles/fonts/{,*/}*.*'
           ]
         }, {
