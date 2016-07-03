@@ -1,0 +1,19 @@
+upstream backend {
+    server apis:80;
+}
+
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server ipv6only=on;
+
+    location /api/ {
+        rewrite ^/api/(.*)$ /api/$1 break;
+        proxy_pass http://backend/;
+    }
+
+    location / {
+        index index.html;
+        root /site/;
+    }
+
+}
