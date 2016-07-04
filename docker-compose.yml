@@ -4,6 +4,8 @@ services:
   apis:
     build: ./api-seed/.
     container_name: apis
+    volumes:
+        - "apis:/root/.pm2/logs/"
     depends_on:
       - db
       - redis
@@ -40,6 +42,7 @@ services:
 
 volumes:
     mongodb:
+    apis:
 networks:
   front-net:
   back-net:
