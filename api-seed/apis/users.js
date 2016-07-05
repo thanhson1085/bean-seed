@@ -54,7 +54,7 @@ router.get('/get/:id', function(req, res){
 
 // get list of users
 router.get('/list/:page/:limit', function(req, res){
-    var limit = (req.params.limit)? req.params.limit: 10;
+    var limit = (req.params.limit)? parseInt(req.params.limit): 10;
     var skip = (req.params.page)? limit * (req.params.page - 1): 0;
     db.User.count({}, function(err, c) {
         db.User
