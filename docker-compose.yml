@@ -3,6 +3,7 @@ version: "2"
 services:
   apis:
     build: ./api-seed/.
+    container_name: apis
     depends_on:
       - db
       - redis
@@ -26,6 +27,7 @@ services:
 
   gateway:
     image: nginx
+    container_name: gateway
     volumes:
       - ./app.template:/etc/nginx/conf.d/default.conf
       - ./nginx.template:/etc/nginx/nginx.conf
