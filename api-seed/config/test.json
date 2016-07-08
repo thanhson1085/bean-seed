@@ -10,9 +10,27 @@
         "level": "debug",
         "handleExceptions": false
     },
+    "redis": {
+        "host": "localhost",
+        "port": "6379",
+        "password": null,
+        "prefix": "api"
+    },
+    "mailer": {
+        "from": "no-reply@example.com",
+        "host": "smtp.mail.com",
+        "secureConnection": true,
+        "port": 465,
+        "transportMethod": "SMTP",
+        "auth": {
+            "user": "mail.user@mail.com",
+            "pass": "userpass"
+        }
+    },
     "unauthorization": [
         "/api/v1/users/login", 
-        "/api/v1/users/create"
+        "/api/v1/users/create",
+        "/api/v1/config/get"
     ],
     "token_expire": 86400,
     "time_format": "YYYY-DD-MM H:mm:ss:SSS"
