@@ -3,9 +3,6 @@ version: "2"
 services:
   apis:
     build: ./api-seed/.
-    container_name: apis
-    volumes:
-        - "apis:/root/.pm2/logs/"
     depends_on:
       - db
       - redis
@@ -30,7 +27,8 @@ services:
   gateway:
     image: nginx
     volumes:
-      - ./nginx.template:/etc/nginx/conf.d/default.conf
+      - ./app.template:/etc/nginx/conf.d/default.conf
+      - ./nginx.template:/etc/nginx/nginx.conf
       - ./site-seed/dist:/site
     ports:
       - "80:80"

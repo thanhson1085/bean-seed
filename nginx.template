@@ -1,19 +1,31 @@
-upstream backend {
-    server apis:3000;
+user  nginx;
+worker_processes  1;
+
+error_log  /var/log/nginx/error.log warn;
+pid        /var/run/nginx.pid;
+
+
+events {
+    worker_connections  1024;
 }
 
-server {
-    listen 80 default_server;
-    listen [::]:80 default_server ipv6only=on;
 
-    location /api/ {
-        rewrite ^/api/(.*)$ /api/$1 break;
-        proxy_pass http://backend/;
-    }
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
 
-    location / {
-        index index.html;
-        root /site/;
-    }
+    log_format main '[$time_local] $remote_addr - $remote_user - $server_name to: '
+                    '$upstream_addr $request $status upstream_response_time '
+                    '$upstream_response_time msec $msec request_time $request_time';
+    access_log /dev/stdout main;
 
+    sendfile        on;
+    #tcp_nopush     on;
+
+    keepalive_timeout  65;
+
+    #gzip  on;
+
+    include /etc/nginx/conf.d/*.conf;
 }
+
