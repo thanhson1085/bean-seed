@@ -6,6 +6,7 @@ var express = require('express'),
     moment = require('moment'),
     config = require('config'),
     crypto = require('crypto'),
+    os = require('os'),
     router = express.Router();
 
 // create a new user
@@ -22,7 +23,7 @@ router.post('/create', function(req, res){
             delete user.salt;
         }
         // send email welcome to user
-        q.create('email', {
+        q.create(os.hostname() + 'email', {
             title: '[Site Admin] Thank You',
             to: new_user.email,
             emailContent: {
