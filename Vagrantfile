@@ -1,6 +1,6 @@
 Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/trusty64"
-  override.vm.synced_folder "./ops/data", "/vagrant"
+  config.vm.provision :shell, path: "./ops/init.sh"
 
   config.vm.provider "virtualbox" do |vb|
     vb.gui = false
