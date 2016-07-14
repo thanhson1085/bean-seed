@@ -53,5 +53,3 @@ wait
 
 echo Installing Docker Swarm/Registrator/cAdvisor...
 docker pull swarm
-docker pull registrator
-docker pull cadvisor

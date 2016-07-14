@@ -3,9 +3,10 @@ var nodemailer = require('nodemailer');
 var smtpTransport = require('nodemailer-smtp-transport');
 var config = require('config');
 var consumer = {};
+var os = require('os');
 var transporter = nodemailer.createTransport(smtpTransport(config.get('mailer')));
 var logger = require('../helpers/logger');
-consumer.name = 'email';
+consumer.name = os.hostname() + 'email';
 
 var EmailTemplate = require('email-templates').EmailTemplate;
 var path = require('path');
