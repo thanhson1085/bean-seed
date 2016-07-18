@@ -8,5 +8,5 @@ cp /build/consul.conf /etc/init/
 start consul
 
 # Setup Consul-Template
-cp /build/consul-tempalte.conf /etc/init/
+cp /build/consul-template.conf /etc/init/
 start consul-template
