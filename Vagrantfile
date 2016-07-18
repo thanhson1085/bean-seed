@@ -18,7 +18,7 @@ Vagrant.configure(2) do |config|
   config.vm.define "nodetwo" do |n2|
     n2.vm.hostname = "nodetwo"
     n2.vm.network "private_network", ip: "172.20.20.21"
-    n1.vm.synced_folder "./ops/data/two/", "/build"
+    n2.vm.synced_folder "./ops/data/two/", "/build"
     n2.vm.provision :shell, path: "./ops/nodetwo.sh"
   end
 end
