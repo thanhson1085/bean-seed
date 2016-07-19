@@ -10,6 +10,8 @@ echo Installing dependencies...
 apt-get update && \
     apt-get install -y unzip curl wget
 
+wait 
+
 echo Fetching Consul...
 cd /tmp/
 wget https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_amd64.zip -O consul.zip
@@ -51,5 +53,5 @@ chmod +x /usr/local/bin/docker-compose
 
 wait
 
-echo Installing Docker Swarm/Registrator/cAdvisor...
-docker pull swarm
+echo Installing Docker Swarm...
+/usr/bin/docker pull swarm
