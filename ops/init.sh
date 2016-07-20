@@ -15,6 +15,9 @@ apt-get update && \
 
 wait 
 
+echo Cloning Source Code...
+git clone https://github.com/thanhson1085/bean-seed.git /build
+
 echo Fetching Consul...
 cd /tmp/
 wget https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_amd64.zip -O consul.zip
