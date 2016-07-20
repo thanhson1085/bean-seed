@@ -15,7 +15,7 @@ start consul-template
 
 # Restart Docker with new Configuration
 cp /build/docker.conf /etc/default/docker
-service restart docker
+service docker restart
 
 wait
 
