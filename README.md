@@ -5,3 +5,8 @@
 ```
 docker-compose up
 ```
+
+### Using Vagrant and Virtualbox
+```
+vagrant up
+```
