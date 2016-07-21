@@ -6,15 +6,15 @@ COMPOSE_VERSION=1.7.1
 CONSUL_VERSION=0.6.4
 CONSUL_TEMPLATE_VERSION=0.15.0
 
-echo Cloning Source Code...
-git clone https://github.com/thanhson1085/bean-seed.git /build
-
 # Issue http://askubuntu.com/questions/41605/trouble-downloading-packages-list-due-to-a-hash-sum-mismatch-error
 rm -rf /var/lib/apt/lists/*
 
 echo Installing dependencies...
 apt-get update && \
     apt-get install -y unzip curl wget
+
+echo Cloning Source Code...
+git clone https://github.com/thanhson1085/bean-seed.git /build
 
 wait 
 
