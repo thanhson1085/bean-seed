@@ -1,5 +1,11 @@
 Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/trusty64"
+  config.vm.provision "shell", inline: <<-SHELL
+    sudo apt-get update
+    sudo apt-get install -y whois git unzip wget curl
+    sudo useradd -m -p `mkpasswd password` -s /bin/bash dev
+    sudo usermod -a -G sudo dev
+  SHELL
   config.vm.provision :shell, path: "./ops/init.sh"
 
   config.vm.provider "virtualbox" do |vb|

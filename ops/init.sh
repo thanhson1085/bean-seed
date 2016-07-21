@@ -9,10 +9,6 @@ CONSUL_TEMPLATE_VERSION=0.15.0
 # Issue http://askubuntu.com/questions/41605/trouble-downloading-packages-list-due-to-a-hash-sum-mismatch-error
 rm -rf /var/lib/apt/lists/*
 
-echo Installing dependencies...
-apt-get update && \
-    apt-get install -y unzip curl wget
-
 echo Cloning Source Code...
 git clone https://github.com/thanhson1085/bean-seed.git /build
 
@@ -43,15 +39,7 @@ chmod +x consul-template
 mv consul-template /usr/bin/consul-template
 
 echo Installing Docker ...
-apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
-echo "deb https://apt.dockerproject.org/repo ubuntu-trusty main" \
-    > /etc/apt/sources.list.d/docker.list
-
-apt-get update && \
-    apt-get install -y linux-image-extra-$(uname -r)
-
-apt-get update && \
-    apt-get install -y docker-engine
+wget -qO- https://get.docker.com/ | sh
 
 echo Installing Docker Compose
 curl -L https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
