@@ -3,7 +3,6 @@ version: "2"
 services:
   apis:
     image: thanhson1085/api-seed
-    container_name: apis
     depends_on:
       - db
       - redis
