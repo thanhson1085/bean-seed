@@ -2,7 +2,7 @@ version: "2"
 
 services:
   apis:
-    build: ./api-seed/.
+    image: thanhson1085/api-seed
     container_name: apis
     depends_on:
       - db
@@ -10,6 +10,11 @@ services:
     networks:
       - front-net
       - back-net
+
+  site:
+    image: thanhson1085/site-seed
+    networks:
+      - front-net
 
   redis:
     image: redis:alpine
@@ -31,7 +36,6 @@ services:
     volumes:
       - ./app.template:/etc/nginx/conf.d/default.conf
       - ./nginx.template:/etc/nginx/nginx.conf
-      - ./site-seed/dist:/site
     ports:
       - "80:80"
       - "443:443"
