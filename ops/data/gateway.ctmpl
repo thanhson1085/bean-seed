@@ -1,0 +1,23 @@
+upstream backend {
+    {{range service "api-seed"}}
+    server {{.NodeAddress}}:{{.Port}};{{end}}
+}
+
+upstream frontend {
+    server site;
+}
+
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server ipv6only=on;
+
+    location /api/ {
+        rewrite ^/api/(.*)$ /api/$1 break;
+        proxy_pass http://backend/;
+    }
+
+    location / {
+        proxy_pass http://frontend/;
+    }
+
+}

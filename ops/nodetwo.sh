@@ -9,6 +9,10 @@ start consul
 
 wait
 
+# Setup Consul-Template
+cp /build/ops/data/one/consul-template.conf /etc/init/
+start consul-template
+
 # Restart Docker with new Configuration
 cp /build/ops/data/two/docker.conf /etc/default/docker
 service docker restart
