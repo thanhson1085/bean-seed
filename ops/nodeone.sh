@@ -30,3 +30,6 @@ start swarm
 # Setup Swarm Manager
 cp /build/ops/data/one/swarm-manager.conf /etc/init/
 start swarm-manager
+
+# Pulling The Images...
+cd /build/ && docker-compose pull
