@@ -1,6 +1,6 @@
 upstream backend {
     {{range service "api-seed"}}
-    server {{.NodeAddress}}:{{.Port}};{{end}}
+    server {{.Address}}:{{.Port}};{{end}}
 }
 
 upstream frontend {
