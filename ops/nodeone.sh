@@ -19,6 +19,10 @@ service docker restart
 
 wait 
 
+# Create Network Name
+docker network create --driver=overlay build_back-net
+docker network create --driver=overlay build_front-net
+
 # Setup Registrator
 cp /build/ops/data/one/registrator.conf /etc/init/
 start registrator
