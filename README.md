@@ -3,10 +3,10 @@
 
 If you are planning to build a project with Microservices pattern and DevOps culture, you can use this source code.
 
-In this source code, I built two services, one for Frontend [AngularJS and Bootstrap](https://github.com/thanhson1085/bean-seed/tree/master/site-seed), one for Backend [ExpressJS and Mongoose](https://github.com/thanhson1085/bean-seed/tree/master/api-seed). All services in this project is dockerized and pushed to Docker Hub. You can read Dockerfile in each service for futher details.
+In this source code, I built two services, one for Frontend [AngularJS and Bootstrap](https://github.com/thanhson1085/bean-seed/tree/master/site-seed), one for Backend [ExpressJS and Mongoose](https://github.com/thanhson1085/bean-seed/tree/master/api-seed). All services in this project is dockerized and pushed to Docker Hub. You can read Dockerfile in each service for further details. To create a new service, you just create a new directory, writing source code for that service and update docker-compose.yml file.
 
 ### Run
-The Orchestration of Project is written in docker-compose.yml file. So it is so easily to understand and run the project.
+The Orchestration of Project is written in [docker-compose.yml](https://github.com/thanhson1085/bean-seed/blob/master/docker-compose.yml) file. So it is so easily to understand and run the project.
 ```
 docker-compose up
 ```
