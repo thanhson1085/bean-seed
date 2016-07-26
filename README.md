@@ -19,3 +19,30 @@ vagrant up
 After that, you can access the application via link: http://172.20.20.20
 
 You can read [Vagrantfile](https://github.com/thanhson1085/bean-seed/blob/master/Vagrantfile) to understand what we need to prepare for VMs.
+
+
+### Contents
+
+| Part | Title                       | Git Tag |
+|------|-----------------------------|---------|
+| 1    | Starting with ExpressJS     |  [1.0](https://github.com/thanhson1085/bean-seed/tree/1.0)|
+| 2    | Logger with Winston     |  [1.1](https://github.com/thanhson1085/bean-seed/tree/1.1)|
+| 4    | Config Management with Node-Config     |  [1.2](https://github.com/thanhson1085/bean-seed/tree/1.2)|
+| 5    | Building Create User API     |  [2.1](https://github.com/thanhson1085/bean-seed/tree/2.1)|
+| 6    | Adding Swagger Documents     |  [2.2](https://github.com/thanhson1085/bean-seed/tree/2.2)|
+| 7    | Building Login API    |  [2.3](https://github.com/thanhson1085/bean-seed/tree/2.3)|
+| 8    | Building Get User List/Detail API     |  [2.4](https://github.com/thanhson1085/bean-seed/tree/2.4)|
+| 9    | Authorization all APIs     |  [2.5](https://github.com/thanhson1085/bean-seed/tree/2.5)|
+| 10    | Unit Test     |  [2.6](https://github.com/thanhson1085/bean-seed/tree/2.6)|
+| 11    | Building Config API     |  [3.0](https://github.com/thanhson1085/bean-seed/tree/3.0)|
+| 12    | Using Cache     |  [3.1](https://github.com/thanhson1085/bean-seed/tree/3.1)|
+| 13    | Using Queue     |  [3.2](https://github.com/thanhson1085/bean-seed/tree/3.2)|
+| 14    | Starting AngularJS with Yeoman     |  [4.0](https://github.com/thanhson1085/bean-seed/tree/4.0)|
+| 15    | Config Management for AngularJS     |  [4.1](https://github.com/thanhson1085/bean-seed/tree/4.1)|
+| 16    | Building Login Page     |  [4.2](https://github.com/thanhson1085/bean-seed/tree/4.2)|
+| 17    | Building List User Page     |  [4.2](https://github.com/thanhson1085/bean-seed/tree/4.2)|
+| 18    | Pagination with AngularJS and Bootstrap     |  [4.3](https://github.com/thanhson1085/bean-seed/tree/4.3)|
+| 19    | Multiple Languages     |  [4.4](https://github.com/thanhson1085/bean-seed/tree/4.4)|
+| 20    | AngularJS Unit Test     |  [4.5](https://github.com/thanhson1085/bean-seed/tree/4.5)|
+| 21    | Dockerize Aplication     |  [5.0](https://github.com/thanhson1085/bean-seed/tree/5.0)|
+| 22    | Orchestration with Docker Compose     |  [5.1](https://github.com/thanhson1085/bean-seed/tree/5.1)|
