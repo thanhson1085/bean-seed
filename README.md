@@ -20,6 +20,11 @@ After that, you can access the application via link: http://172.20.20.20
 
 You can read [Vagrantfile](https://github.com/thanhson1085/bean-seed/blob/master/Vagrantfile) to understand what we need to prepare for VMs.
 
+### System Architecture
+After running `docker-compose up` we will have a system as below:
+
+![Starting a Miroservices Project with NodeJS and Docker](https://sonnguyen.ws/wp-content/uploads/2016/07/docker-compose-orchestration.png)
+
 
 ### Contents
 
