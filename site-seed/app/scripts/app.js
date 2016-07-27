@@ -46,6 +46,24 @@ angular
                 }
             }
         })
+        .state('register',{
+            templateUrl:'views/pages/register.html',
+            controller: 'RegisterCtrl',
+            controllerAs: 'vs',
+            url:'/register',
+            resolve: {
+                loadMyDirectives:function($ocLazyLoad){
+                    return $ocLazyLoad.load(
+                        {
+                            name:'sbAdminApp',
+                            files:[
+                                'scripts/controllers/register.js',
+                                'scripts/services/users.js'
+                            ]
+                        });
+                }
+            }
+        })
         .state('home', {
             url: '/home',
             templateUrl: 'views/main.html',
