@@ -43,10 +43,10 @@ angular.module('siteSeedApp').factory('Users', function($resource, $q, APP_CONFI
             });
             return deferred.promise;
         },
-        get: function(id){
+        get: function(userId){
             var deferred = $q.defer();
             var url = APP_CONFIG.services.users.get;
-            var Users = $resource(url, {id: id});
+            var Users = $resource(url, {userId: userId});
             
             Users.get(function(res) {
                 deferred.resolve(res);

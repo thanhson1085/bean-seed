@@ -3,7 +3,8 @@
         "users": {
             "create": "/api/v1/users/create",
             "login": "/api/v1/users/login",
-            "list": "/api/v1/users/list/:page/:limit"
+            "list": "/api/v1/users/list/:page/:limit",
+            "get": "/api/v1/users/get/:userId"
         }
     },
     "debug_mode": true

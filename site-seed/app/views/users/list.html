@@ -25,7 +25,7 @@
                         <tbody>
                             <tr ng-repeat="user in users track by $index">
                                 <td>{{ $index + 1 }}</td>
-                                <td><a>{{ user.username }}</a></td>
+                                <td><a ui-sref="home.user_get({userId: user._id})">{{ user.username }}</a></td>
                                 <td>{{ user.firstname +  ' ' + user.lastname }}</td>
                                 <td>{{ user.createdAt }}</td>
                             </tr>

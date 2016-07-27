@@ -22,6 +22,7 @@ module.exports = function(config) {
       // bower:js
       'bower_components/jquery/dist/jquery.js',
       'bower_components/angular/angular.js',
+      'bower_components/angular-animate/angular-animate.js',
       'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js',
       'bower_components/angular-touch/angular-touch.js',
       'bower_components/angular-ui-router/release/angular-ui-router.js',
@@ -33,6 +34,7 @@ module.exports = function(config) {
       'bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js',
       'bower_components/angular-translate-storage-local/angular-translate-storage-local.js',
       'bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js',
+      'bower_components/angular-loading-bar/build/loading-bar.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/config.js',
