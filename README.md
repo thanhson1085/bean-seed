@@ -45,9 +45,11 @@ After running `docker-compose up` we will have a system as below:
 | 14    | Starting AngularJS with Yeoman     |  [4.0](https://github.com/thanhson1085/bean-seed/tree/4.0)|
 | 15    | Config Management for AngularJS     |  [4.1](https://github.com/thanhson1085/bean-seed/tree/4.1)|
 | 16    | Building Login Page     |  [4.2](https://github.com/thanhson1085/bean-seed/tree/4.2)|
-| 17    | Building List User Page     |  [4.2](https://github.com/thanhson1085/bean-seed/tree/4.2)|
-| 18    | Pagination with AngularJS and Bootstrap     |  [4.3](https://github.com/thanhson1085/bean-seed/tree/4.3)|
-| 19    | Multiple Languages     |  [4.4](https://github.com/thanhson1085/bean-seed/tree/4.4)|
-| 20    | AngularJS Unit Test     |  [4.5](https://github.com/thanhson1085/bean-seed/tree/4.5)|
-| 21    | Dockerize Aplication     |  [5.0](https://github.com/thanhson1085/bean-seed/tree/5.0)|
-| 22    | Orchestration with Docker Compose     |  [5.1](https://github.com/thanhson1085/bean-seed/tree/5.1)|
+| 17    | Building Register Page     |  [4.3](https://github.com/thanhson1085/bean-seed/tree/4.3)|
+| 18    | Building List User Page     |  [4.4](https://github.com/thanhson1085/bean-seed/tree/4.4)|
+| 19    | Pagination with AngularJS and Bootstrap     |  [4.5](https://github.com/thanhson1085/bean-seed/tree/4.5)|
+| 20    | Multiple Languages     |  [4.6](https://github.com/thanhson1085/bean-seed/tree/4.6)|
+| 21    | AngularJS Unit Test     |  [4.7](https://github.com/thanhson1085/bean-seed/tree/4.7)|
+| 22    | Building User Detail Page     |  [4.8](https://github.com/thanhson1085/bean-seed/tree/4.8)|
+| 23    | Dockerize Aplication     |  [5.0](https://github.com/thanhson1085/bean-seed/tree/5.0)|
+| 24    | Orchestration with Docker Compose     |  [5.1](https://github.com/thanhson1085/bean-seed/tree/5.1)|
