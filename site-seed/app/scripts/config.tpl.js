@@ -5,7 +5,8 @@ angular
     'ngCookies',
     'ui.router',
     'ui.bootstrap',
-    'oc.lazyLoad'
+    'oc.lazyLoad',
+    'pascalprecht.translate'
 ])  
 .constant('APP_CONFIG', /* @echo APP_CONFIG */)
 .value('debug', true);
