@@ -132,7 +132,7 @@ angular
                 }
             }
         })
-        .state('home.users.get', {
+        .state('home.user_get', {
             url: '/users/get/:userId',
             controller: 'UserDetailCtrl',
             templateUrl: 'views/users/view.html',
@@ -142,6 +142,7 @@ angular
                         {
                             name:'siteSeedApp',
                             files:[
+                                'scripts/controllers/users.js'
                             ]
                         });
                 }

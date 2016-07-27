@@ -18,5 +18,8 @@ angular.module('siteSeedApp')
 
     $scope.forUnitTest = true;
 })
-.controller('UserDetailCtrl', function() {
+.controller('UserDetailCtrl', function($scope, Users, $stateParams) {
+    Users.get($stateParams.userId).then(function(res) {
+        $scope.user = res;
+    });
 });
