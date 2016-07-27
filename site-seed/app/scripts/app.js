@@ -13,6 +13,23 @@ angular
 .config(['$resourceProvider', function($resourceProvider) {
   $resourceProvider.defaults.stripTrailingSlashes = false;
 }])
+.config(function ($translateProvider, APP_CONFIG) {
+    if (APP_CONFIG.debug_mode) {
+        $translateProvider.useMissingTranslationHandlerLog();
+    }
+
+    $translateProvider.useStaticFilesLoader({
+        files: [
+            {
+                prefix: 'resources/locale-',
+                suffix: '.json'
+            }
+        ]
+    });
+
+    $translateProvider.preferredLanguage(APP_CONFIG.locales.preferredLocale);
+    $translateProvider.useLocalStorage();
+})
 .config([
     '$stateProvider',
     '$urlRouterProvider',
@@ -75,6 +92,8 @@ angular
                             files:[
                                 'scripts/directives/header/header.js',
                                 'scripts/directives/sidebar/sidebar.js',
+                                'scripts/services/locale.js',
+                                'scripts/directives/locale/locale.js',
                                 'scripts/services/users.js'
                             ]
                         });
@@ -112,6 +131,10 @@ angular
                         });
                 }
             }
+        })
+        .state('home.user_setting',{
+            templateUrl:'views/users/setting.html',
+            url:'/users/setting',
         });
         $httpProvider.interceptors.push('httpRequestInterceptor');
     }

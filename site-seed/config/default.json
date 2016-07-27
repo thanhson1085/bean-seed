@@ -2,7 +2,9 @@
     "services": {
         "users": {
             "create": "/api/v1/users/create",
-            "login": "/api/v1/users/login"
+            "login": "/api/v1/users/login",
+            "list": "/api/v1/users/list/:page/:limit"
         }
-    }
+    },
+    "debug_mode": true
 }
