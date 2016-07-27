@@ -25,7 +25,7 @@ angular
             events: true,
         });
 
-        $urlRouterProvider.otherwise('/login');
+        $urlRouterProvider.otherwise('/home/dashboard');
 
         $stateProvider
         .state('login',{
@@ -74,7 +74,8 @@ angular
                             name:'siteSeedApp',
                             files:[
                                 'scripts/directives/header/header.js',
-                                'scripts/directives/sidebar/sidebar.js'
+                                'scripts/directives/sidebar/sidebar.js',
+                                'scripts/services/users.js'
                             ]
                         });
                 }
@@ -95,7 +96,35 @@ angular
                         });
                 }
             }
+        })
+        .state('home.users', {
+            url: '/users/list/{page}/{limit}',
+            controller: 'ListUserCtrl',
+            templateUrl: 'views/users/list.html',
+            resolve: {
+                loadMyDirectives: function($ocLazyLoad){
+                    return $ocLazyLoad.load(
+                        {
+                            name:'siteSeedApp',
+                            files:[
+                                'scripts/controllers/users.js'
+                            ]
+                        });
+                }
+            }
         });
+        $httpProvider.interceptors.push('httpRequestInterceptor');
     }
-]);
+])
+.factory('httpRequestInterceptor', function ($rootScope, $cookies, $location) {
+    var ret = {
+        request: function (config) {
+            var user_info = $cookies.get('userInfo') || '{}';
+            $rootScope.user_info = JSON.parse(user_info);
+            config.headers.Authorization = 'Bearer ' + $rootScope.user_info.token;
+            return config;
+        }
+    };
+    return ret;
+});
 
