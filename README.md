@@ -33,23 +33,24 @@ After running `docker-compose up` we will have a system as below:
 | 1    | Starting with ExpressJS     |  [1.0](https://github.com/thanhson1085/bean-seed/tree/1.0)|
 | 2    | Logger with Winston     |  [1.1](https://github.com/thanhson1085/bean-seed/tree/1.1)|
 | 4    | Config Management with Node-Config     |  [1.2](https://github.com/thanhson1085/bean-seed/tree/1.2)|
-| 5    | Building Create User API     |  [2.1](https://github.com/thanhson1085/bean-seed/tree/2.1)|
-| 6    | Adding Swagger Documents     |  [2.2](https://github.com/thanhson1085/bean-seed/tree/2.2)|
-| 7    | Building Login API    |  [2.3](https://github.com/thanhson1085/bean-seed/tree/2.3)|
-| 8    | Building Get User List/Detail API     |  [2.4](https://github.com/thanhson1085/bean-seed/tree/2.4)|
-| 9    | Authorization all APIs     |  [2.5](https://github.com/thanhson1085/bean-seed/tree/2.5)|
-| 10    | Unit Test     |  [2.6](https://github.com/thanhson1085/bean-seed/tree/2.6)|
-| 11    | Building Config API     |  [3.0](https://github.com/thanhson1085/bean-seed/tree/3.0)|
-| 12    | Using Cache     |  [3.1](https://github.com/thanhson1085/bean-seed/tree/3.1)|
-| 13    | Using Queue     |  [3.2](https://github.com/thanhson1085/bean-seed/tree/3.2)|
-| 14    | Starting AngularJS with Yeoman     |  [4.0](https://github.com/thanhson1085/bean-seed/tree/4.0)|
-| 15    | Config Management for AngularJS     |  [4.1](https://github.com/thanhson1085/bean-seed/tree/4.1)|
-| 16    | Building Login Page     |  [4.2](https://github.com/thanhson1085/bean-seed/tree/4.2)|
-| 17    | Building Register Page     |  [4.3](https://github.com/thanhson1085/bean-seed/tree/4.3)|
-| 18    | Building List User Page     |  [4.4](https://github.com/thanhson1085/bean-seed/tree/4.4)|
-| 19    | Pagination with AngularJS and Bootstrap     |  [4.5](https://github.com/thanhson1085/bean-seed/tree/4.5)|
-| 20    | Multiple Languages     |  [4.6](https://github.com/thanhson1085/bean-seed/tree/4.6)|
-| 21    | AngularJS Unit Test     |  [4.7](https://github.com/thanhson1085/bean-seed/tree/4.7)|
-| 22    | Building User Detail Page     |  [4.8](https://github.com/thanhson1085/bean-seed/tree/4.8)|
-| 23    | Dockerize Aplication     |  [5.0](https://github.com/thanhson1085/bean-seed/tree/5.0)|
-| 24    | Orchestration with Docker Compose     |  [5.1](https://github.com/thanhson1085/bean-seed/tree/5.1)|
+| 5    | ExpressJS and Mongoose     |  [2.0](https://github.com/thanhson1085/bean-seed/tree/2.0)|
+| 6    | Building Create User API     |  [2.1](https://github.com/thanhson1085/bean-seed/tree/2.1)|
+| 7    | Adding Swagger Documents     |  [2.2](https://github.com/thanhson1085/bean-seed/tree/2.2)|
+| 8    | Building Login API    |  [2.3](https://github.com/thanhson1085/bean-seed/tree/2.3)|
+| 9    | Building Get User List/Detail API     |  [2.4](https://github.com/thanhson1085/bean-seed/tree/2.4)|
+| 10    | Authorization all APIs     |  [2.5](https://github.com/thanhson1085/bean-seed/tree/2.5)|
+| 11    | Unit Test     |  [2.6](https://github.com/thanhson1085/bean-seed/tree/2.6)|
+| 12    | Building Config API     |  [3.0](https://github.com/thanhson1085/bean-seed/tree/3.0)|
+| 13    | Using Cache     |  [3.1](https://github.com/thanhson1085/bean-seed/tree/3.1)|
+| 14    | Using Queue     |  [3.2](https://github.com/thanhson1085/bean-seed/tree/3.2)|
+| 15    | Starting AngularJS with Yeoman     |  [4.0](https://github.com/thanhson1085/bean-seed/tree/4.0)|
+| 16    | Config Management for AngularJS     |  [4.1](https://github.com/thanhson1085/bean-seed/tree/4.1)|
+| 17    | Building Login Page     |  [4.2](https://github.com/thanhson1085/bean-seed/tree/4.2)|
+| 18    | Building Register Page     |  [4.3](https://github.com/thanhson1085/bean-seed/tree/4.3)|
+| 19    | Building List User Page     |  [4.4](https://github.com/thanhson1085/bean-seed/tree/4.4)|
+| 20    | Pagination with AngularJS and Bootstrap     |  [4.5](https://github.com/thanhson1085/bean-seed/tree/4.5)|
+| 21    | Multiple Languages     |  [4.6](https://github.com/thanhson1085/bean-seed/tree/4.6)|
+| 22    | AngularJS Unit Test     |  [4.7](https://github.com/thanhson1085/bean-seed/tree/4.7)|
+| 23    | Building User Detail Page     |  [4.8](https://github.com/thanhson1085/bean-seed/tree/4.8)|
+| 24    | Dockerize Aplication     |  [5.0](https://github.com/thanhson1085/bean-seed/tree/5.0)|
+| 25    | Orchestration with Docker Compose     |  [5.1](https://github.com/thanhson1085/bean-seed/tree/5.1)|
