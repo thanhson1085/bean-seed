@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
+// Define User Schema
 var User = new Schema({
     username: {
         type: String,
@@ -14,7 +15,7 @@ var User = new Schema({
     },
     firstname: String,
     lastname: String,
-    password: {
+    hashed_password: {
         type: String,
         require: true
     },
