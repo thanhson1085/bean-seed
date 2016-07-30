@@ -5,7 +5,7 @@
 ### Configuration
 Take a look to the configuration file at `config/default.json`
 
-### Installatioin
+### Installation
 ```
 npm install
 ```
