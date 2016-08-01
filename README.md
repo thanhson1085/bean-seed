@@ -54,3 +54,11 @@ After running `docker-compose up` we will have a system as below:
 | 23    | Building User Detail Page     |  [4.8](https://github.com/thanhson1085/bean-seed/tree/4.8)|
 | 24    | Dockerize Aplication     |  [5.0](https://github.com/thanhson1085/bean-seed/tree/5.0)|
 | 25    | Orchestration with Docker Compose     |  [5.1](https://github.com/thanhson1085/bean-seed/tree/5.1)|
+
+### Documents
+
+#### Tiếng Việt
+1. [Tạo một API đầu tiên với NodeJS](https://sonnguyen.ws/vi/tao-mot-service-dau-tien-voi-nodejs/)
+2. [Quản lý Logs trong dự án NodeJS](https://sonnguyen.ws/vi/quan-ly-logs-trong-du-nodejs/)
+3. [Quản lý Config trong dự án NodeJS](https://sonnguyen.ws/vi/quan-ly-config-trong-du-nodejs/)
+
