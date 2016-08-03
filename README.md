@@ -61,4 +61,5 @@ After running `docker-compose up` we will have a system as below:
 1. [Tạo một API đầu tiên với NodeJS](https://sonnguyen.ws/vi/tao-mot-service-dau-tien-voi-nodejs/)
 2. [Quản lý Logs trong dự án NodeJS](https://sonnguyen.ws/vi/quan-ly-logs-trong-du-nodejs/)
 3. [Quản lý Config trong dự án NodeJS](https://sonnguyen.ws/vi/quan-ly-config-trong-du-nodejs/)
+4. [Cài đặt và chạy thử MongoDB trên Ubuntu Server](https://sonnguyen.ws/vi/cai-dat-va-chay-thu-mongodb-tren-ubuntu/)
 
