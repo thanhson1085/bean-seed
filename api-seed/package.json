@@ -39,7 +39,7 @@
     "nodemailer-smtp-transport": "^2.4.2",
     "redis": "^2.6.0-2",
     "supertest": "^1.2.0",
-    "swagger-editor": "^2.9.9",
+    "swagger-editor": "~2.9.9",
     "winston": "^2.2.0"
   }
 }
