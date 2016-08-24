@@ -20,7 +20,7 @@ router.post('/create', function(req, res){
         new_user = user.toObject();
         if (new_user) {
             delete new_user.hashed_password;
-            delete user.salt;
+            delete new_user.salt;
         }
         // send email welcome to user
         q.create(os.hostname() + 'email', {
