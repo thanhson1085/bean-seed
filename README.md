@@ -55,6 +55,33 @@ After running `docker-compose up` we will have a system as below:
 | 24    | Dockerize Aplication     |  [5.0](https://github.com/thanhson1085/bean-seed/tree/5.0)|
 | 25    | Orchestration with Docker Compose     |  [5.1](https://github.com/thanhson1085/bean-seed/tree/5.1)|
 
+### For Developer
+Setup Backend
+```
+cd api-seed
+npm install
+# create local configuration file
+cp config/default.json config/local.json
+# edit local.json for match your environment
+```
+Run Backend
+```
+node index.js
+```
+Setup Frontend
+```
+cd site-seed
+npm install
+bower install
+# create local configuration file
+cp config/default.json config/local.json
+# edit local.json for match your environment
+```
+Run Frontend with Grunt
+```
+grunt serve
+```
+
 ### Documents
 
 #### Tiếng Việt
