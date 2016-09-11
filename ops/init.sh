@@ -2,7 +2,7 @@
 
 sudo su -
 
-COMPOSE_VERSION=1.7.1
+COMPOSE_VERSION=1.8.0
 
 echo Cloning Source Code...
 git clone https://github.com/thanhson1085/bean-seed.git /build
