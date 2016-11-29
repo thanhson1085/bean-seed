@@ -29,6 +29,53 @@ services:
     networks:
       - back-net
 
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    depends_on:
+      - influxdb
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    networks:
+      - monitor-net
+
+  kapacitor:
+    image: kapacitor
+    ports:
+      - "9092:9092"
+    depends_on:
+      - influxdb
+    volumes:
+      - ./monitor/kapacitor/kapacitor.conf:/etc/kapacitor/kapacitor.conf:ro
+    networks:
+      - monitor-net
+
+  influxdb:
+    image: influxdb 
+    networks:
+      - monitor-net
+    ports:
+      - "8083:8083"
+      - "8086:8086"
+
+  telegraf:
+    image: telegraf
+    depends_on:
+      - influxdb
+    environment:
+      - "HOST_PROC=/rootfs/proc"
+      - "HOST_SYS=/rootfs/sys"
+      - "HOST_ETC=/rootfs/etc"
+    volumes:
+      - ./monitor/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /sys:/rootfs/sys:ro
+      - /proc:/rootfs/proc:ro
+      - /etc:/rootfs/etc:ro
+    networks:
+      - monitor-net
+
   gateway:
     image: nginx
     container_name: gateway
@@ -49,3 +96,4 @@ volumes:
 networks:
   front-net:
   back-net:
+  monitor-net:
