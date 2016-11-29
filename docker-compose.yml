@@ -29,6 +29,22 @@ services:
     networks:
       - back-net
 
+  kibana:
+    image: kibana
+    ports:
+      - "5601:5601"
+    environment:
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+    depends_on:
+      - elasticsearch
+    networks:
+      - monitor-net
+
+  elasticsearch:
+    image: elasticsearch
+    networks:
+      - monitor-net
+
   grafana:
     image: grafana/grafana
     ports:
