@@ -45,6 +45,16 @@ services:
     networks:
       - monitor-net
 
+  fluentd:
+    build: ./monitor/fluentd/.
+    image: thanhson1085/fluentd-es
+    volumes:
+      - /var/lib/docker/containers:/var/lib/docker/containers
+    environment:
+      - ES_PORT_9200_TCP_ADDR=elasticsearch
+    networks:
+      - monitor-net
+
   grafana:
     image: grafana/grafana
     ports:
