@@ -81,6 +81,15 @@ Run Frontend with Grunt
 ```
 grunt serve
 ```
+### Monitor & Logs
+Added Telegraf, Influxdb, Grafana & Kapacitor for monitoring
+Added FluentD, Grafana and Kibana for Centralizing logs
+
+### Troubleshoot
+You may meet some trouble with Elasticsearch 5.0+ (requires at least 4G RAM). And run command:
+```
+sysctl -w vm.max_map_count=262144
+```
 
 ### Documents
 
