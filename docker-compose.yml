@@ -3,6 +3,11 @@ version: "2"
 services:
   apis:
     image: thanhson1085/api-seed
+    logging:
+      driver: fluentd
+      options:
+        fluentd-address: "localhost:24224"
+        tag: "docker.apis"
     depends_on:
       - db
       - redis
@@ -48,8 +53,8 @@ services:
   fluentd:
     build: ./monitor/fluentd/.
     image: thanhson1085/fluentd-es
-    volumes:
-      - /var/lib/docker/containers:/var/lib/docker/containers
+    ports:
+      - "24224:24224"
     environment:
       - ES_PORT_9200_TCP_ADDR=elasticsearch
     networks:
@@ -104,6 +109,11 @@ services:
 
   gateway:
     image: nginx
+    logging:
+      driver: fluentd
+      options:
+        fluentd-address: "localhost:24224"
+        tag: "docker.gateway"
     container_name: gateway
     volumes:
       - ./app.template:/etc/nginx/conf.d/default.conf
