@@ -47,6 +47,8 @@ services:
 
   elasticsearch:
     image: elasticsearch
+    volumes:
+        - "elasticsearch:/usr/share/elasticsearch/data"
     networks:
       - monitor-net
 
@@ -79,6 +81,7 @@ services:
       - influxdb
     volumes:
       - ./monitor/kapacitor/kapacitor.conf:/etc/kapacitor/kapacitor.conf:ro
+      - "kapacitor:/var/lib/kapacitor"
     networks:
       - monitor-net
 
@@ -86,12 +89,15 @@ services:
     image: influxdb 
     networks:
       - monitor-net
+    volumes:
+        - "influxdb:/var/lib/influxdb"
     ports:
       - "8083:8083"
       - "8086:8086"
 
   telegraf:
     image: telegraf
+    hostname: nodeone
     depends_on:
       - influxdb
     environment:
@@ -128,7 +134,10 @@ services:
 
 volumes:
     mongodb:
-    apis:
+    influxdb:
+    kapacitor:
+    elasticsearch:
+
 networks:
   front-net:
   back-net:
