@@ -23,7 +23,7 @@ You can read [Vagrantfile](https://github.com/thanhson1085/bean-seed/blob/master
 ### System Architecture
 After running `docker-compose up` we will have a system as below:
 
-![Starting a Miroservices Project with NodeJS and Docker](https://sonnguyen.ws/wp-content/uploads/2016/07/docker-compose-orchestration.png)
+![Starting a Miroservices-DevOps Project with NodeJS and Docker](https://sonnguyen.ws/wp-content/uploads/2016/07/docker-compose-orchestration-3.png)
 
 
 ### Contents
@@ -82,8 +82,7 @@ Run Frontend with Grunt
 grunt serve
 ```
 ### Monitor & Logs
-Added Telegraf, Influxdb, Grafana & Kapacitor for monitoring
-Added FluentD, Grafana and Kibana for Centralizing logs
+This starter project also fully supports monitor by using Telegraf, InfluxDB, Grafana and Kapacitor. Supports centralizing Logs with fluentd, Kibana and Elasticsearch.
 
 ### Troubleshoot
 You may meet some trouble with Elasticsearch 5.0+ (requires at least 4G RAM). And run command:
