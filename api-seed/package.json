@@ -4,7 +4,9 @@
   "description": "A Seed Service with NodeJS and MongoDB",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test mocha"
+    "test": "NODE_ENV=test mocha",
+    "lint": "eslint --cache ./",
+    "start": "nodemon index.js --exec 'npm run lint && node'"
   },
   "repository": {
     "type": "git",
@@ -41,5 +43,12 @@
     "supertest": "^1.2.0",
     "swagger-editor": "~2.9.9",
     "winston": "^2.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.13.1",
+    "eslint-plugin-filenames": "^1.1.0",
+    "eslint-plugin-jasmine": "^2.2.0",
+    "eslint-plugin-promise": "^3.4.0",
+    "nodemon": "^1.11.0"
   }
 }

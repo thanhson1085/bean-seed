@@ -11,12 +11,12 @@ consumer.name = os.hostname() + 'email';
 var EmailTemplate = require('email-templates').EmailTemplate;
 var path = require('path');
 
-consumer.task = function(job, done){
+consumer.task = function(job, done) {
     var data = job.data;
     var templateDir = path.join(__dirname, '../views/emails/', data.template);
     var letter = new EmailTemplate(templateDir);
     letter.render(data.emailContent, function (err, results) {
-        try{
+        try {
             logger.debug('Send email', data.title);
             transporter.sendMail({
                 from: config.get('mailer.from'),
@@ -24,7 +24,7 @@ consumer.task = function(job, done){
                 subject: data.title,
                 html: results.html
             });
-        } catch(e) {
+        } catch (e) {
             logger.error(e);
         }
     });

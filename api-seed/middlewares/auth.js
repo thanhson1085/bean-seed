@@ -19,18 +19,18 @@ module.exports = function(req, res, next) {
         t = t.replace('Bearer ', '');
         db.Token.findOne({
             token: t
-        }).then(function(token){
-            if (!token){
-                throw('');
+        }).then(function(token) {
+            if (!token) {
+                throw ('');
             }
             var today = moment.utc();
             var expired_at = moment(token.expired_at, config.get('time_format'));
             if (expired_at.isBefore(today)) {
-                throw('');
+                throw ('');
             } else {
                 return next();
             }
-        }).catch(function(){
+        }).catch(function() {
             logger.debug('Access Denied %s !!!', t);
             return res.status(401).send(JSON.stringify({}));
         });

@@ -5,7 +5,7 @@ var options = {
     host: config.get('redis.host'),
     port: config.get('redis.port'),
     prefix: config.get('redis.prefix')
-}
+};
 if (config.get('redis.password')) {
     options.password = config.get('redis.password');
 }

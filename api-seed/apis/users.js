@@ -1,5 +1,5 @@
 'use strict';
-var express = require('express'), 
+var express = require('express'),
     db = require('../models'),
     q = require('../queues'),
     logger = require('../helpers/logger'),
@@ -10,9 +10,9 @@ var express = require('express'),
     router = express.Router();
 
 // create a new user
-router.post('/create', function(req, res){
+router.post('/create', function(req, res) {
     var user = new db.User(req.body);
-    user.save(function(error, new_user){
+    user.save(function(error, new_user) {
         if (error) {
             return res.status(406).send(JSON.stringify({error}));
         }
@@ -36,11 +36,11 @@ router.post('/create', function(req, res){
 });
 
 // get a user by id
-router.get('/get/:id', function(req, res){
+router.get('/get/:id', function(req, res) {
     logger.debug('Get User By Id', req.params.id);
     db.User.findOne({
         _id: req.params.id
-    }).then(function(user){
+    }).then(function(user) {
         // remove security attributes
         user = user.toObject();
         if (user) {
@@ -48,13 +48,13 @@ router.get('/get/:id', function(req, res){
             delete user.salt;
         }
         res.send(JSON.stringify(user));
-    }).catch(function(e){
+    }).catch(function(e) {
         res.status(500).send(JSON.stringify(e));
     });
 });
 
 // get list of users
-router.get('/list/:page/:limit', function(req, res){
+router.get('/list/:page/:limit', function(req, res) {
     var limit = (req.params.limit)? parseInt(req.params.limit): 10;
     var skip = (req.params.page)? limit * (req.params.page - 1): 0;
     db.User.count({}, function(err, c) {
@@ -79,21 +79,21 @@ router.get('/list/:page/:limit', function(req, res){
 });
 
 // login
-router.post('/login', function(req, res){
+router.post('/login', function(req, res) {
     var username = req.body.username;
     var password = req.body.password;
 
     var generateToken = function () {
         crypto.randomBytes(64, function(ex, buf) {
-            var token = buf.toString('base64');
+            var t = buf.toString('base64');
             var today = moment.utc();
             var tomorrow = moment(today).add(config.get('token_expire'), 'seconds').format(config.get('time_format'));
             var token = new db.Token({
                 username: username,
-                token: token,
+                token: t,
                 expired_at: tomorrow.toString()
             });
-            token.save(function(error, to){
+            token.save(function(error, to) {
                 return res.send(JSON.stringify(to));
             });
         });
@@ -101,13 +101,13 @@ router.post('/login', function(req, res){
 
     db.User.findOne({
         username: username
-    }).then(function(user){
+    }).then(function(user) {
         if (!user.authenticate(password)) {
             throw false;
         }
         db.Token.findOne({
             username: username
-        }).then(function(t){
+        }).then(function(t) {
             if (t) {
                 t.remove(function() {
                     return generateToken();
@@ -116,7 +116,7 @@ router.post('/login', function(req, res){
                 return generateToken();
             }
         });
-    }).catch(function(e){
+    }).catch(function(e) {
         res.status(401).send(JSON.stringify(e));
     });
 });

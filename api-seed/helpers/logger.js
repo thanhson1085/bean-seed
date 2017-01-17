@@ -11,10 +11,10 @@ var logger = new winston.Logger({
             json: false,
             colorize: false,
             timestamp: function() {
-                var date = new Date();                          
+                var date = new Date();
 
-                var hour = date.getUTCHours();              
-                hour = (hour < 10 ? '0' : '') + hour;   
+                var hour = date.getUTCHours();
+                hour = (hour < 10 ? '0' : '') + hour;
 
                 var min  = date.getUTCMinutes();
                 min = (min < 10 ? '0' : '') + min;
@@ -38,7 +38,7 @@ var logger = new winston.Logger({
             formatter: function(options) {
                 // Return string will be passed to logger.
                 return options.timestamp() + ' ' + options.level.toUpperCase() +' '+ (undefined !== options.message ? options.message : '') +
-                    (options.meta && Object.keys(options.meta).length ? '\n\t'+ JSON.stringify(options.meta) : '' );
+                    (options.meta && Object.keys(options.meta).length ? '\n\t'+ JSON.stringify(options.meta) : '');
             }
         }),
     ],
@@ -47,7 +47,7 @@ var logger = new winston.Logger({
 
 module.exports = logger;
 module.exports.stream = {
-    write: function(message){
+    write: function(message) {
         logger.info(message);
     }
 };
