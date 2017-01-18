@@ -13,7 +13,7 @@ var Token = new Schema({
         index: true,
         require: true
     },
-    expired_at: String
+    expiredAt: String
 });
 
 Token.plugin(CreateUpdatedAt);

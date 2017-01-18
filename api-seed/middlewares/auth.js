@@ -24,8 +24,8 @@ module.exports = function(req, res, next) {
                 throw ('');
             }
             var today = moment.utc();
-            var expired_at = moment(token.expired_at, config.get('time_format'));
-            if (expired_at.isBefore(today)) {
+            var expiredAt = moment(token.expiredAt, config.get('time_format'));
+            if (expiredAt.isBefore(today)) {
                 throw ('');
             } else {
                 return next();

@@ -2,7 +2,6 @@
 
 var express = require('express');
 var fs = require('fs');
-var path = require('path');
 var config = require('config');
 var app = express();
 var yaml = require('js-yaml');

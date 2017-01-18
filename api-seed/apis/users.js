@@ -12,26 +12,26 @@ var express = require('express'),
 // create a new user
 router.post('/create', function(req, res) {
     var user = new db.User(req.body);
-    user.save(function(error, new_user) {
+    user.save(function(error, newUser) {
         if (error) {
             return res.status(406).send(JSON.stringify({error}));
         }
         // remove security attributes
-        new_user = user.toObject();
-        if (new_user) {
-            delete new_user.hashed_password;
-            delete new_user.salt;
+        newUser = user.toObject();
+        if (newUser) {
+            delete newUser.hashedPassword;
+            delete newUser.salt;
         }
         // send email welcome to user
         q.create(os.hostname() + 'email', {
             title: '[Site Admin] Thank You',
-            to: new_user.email,
+            to: newUser.email,
             emailContent: {
-                username: new_user.username
+                username: newUser.username
             },
             template: 'welcome'
         }).priority('high').save();
-        res.send(JSON.stringify(new_user));
+        res.send(JSON.stringify(newUser));
     });
 });
 
@@ -91,7 +91,7 @@ router.post('/login', function(req, res) {
             var token = new db.Token({
                 username: username,
                 token: t,
-                expired_at: tomorrow.toString()
+                expiredAt: tomorrow.toString()
             });
             token.save(function(error, to) {
                 return res.send(JSON.stringify(to));
@@ -115,6 +115,8 @@ router.post('/login', function(req, res) {
             } else {
                 return generateToken();
             }
+        }).catch(function(e) {
+            res.status(401).send(JSON.stringify(e));
         });
     }).catch(function(e) {
         res.status(401).send(JSON.stringify(e));
