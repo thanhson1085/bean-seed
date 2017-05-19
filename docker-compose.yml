@@ -1,4 +1,4 @@
-version: "2"
+version: "3"
 
 services:
   apis:
@@ -11,6 +11,7 @@ services:
     depends_on:
       - db
       - redis
+      - fluentd
     networks:
       - front-net
       - back-net
@@ -22,13 +23,11 @@ services:
 
   redis:
     image: redis:alpine
-    container_name: redis
     networks:
       - back-net
 
   db:
     image: mongo:3.2
-    container_name: db
     volumes:
         - "mongodb:/data/db"
     networks:
@@ -120,10 +119,10 @@ services:
       options:
         fluentd-address: "localhost:24224"
         tag: "docker.gateway"
-    container_name: gateway
     volumes:
-      - ./app.template:/etc/nginx/conf.d/default.conf
-      - ./nginx.template:/etc/nginx/nginx.conf
+      - ./nginx/app.template:/etc/nginx/conf.d/default.conf
+      - ./nginx/nginx.template:/etc/nginx/nginx.conf
+      - ./nginx/:/intermission/
     ports:
       - "80:80"
       - "443:443"
@@ -131,6 +130,19 @@ services:
       - apis
     networks:
       - front-net
+
+#  gateway:
+#    image: openresty/openresty:jessie
+#    volumes:
+#      - ./openresty/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf
+#      - ./openresty/:/intermission/
+#    ports:
+#      - "80:80"
+#      - "443:443"
+#    depends_on:
+#      - apis
+#    networks:
+#      - front-net
 
 volumes:
     mongodb:
