@@ -12,24 +12,10 @@ server {
 
     location /api/ {
         rewrite ^/api/(.*)$ /api/$1 break;
-        set $intermission_interval 0.05; #seconds
-        set $intermission_max_time 300; #seconds
-        set $intermission_health_check_path /up/database;
-        set $intermission_privileged_user_agent "Pingdom";
-        access_by_lua_file /intermission/intermission.lua;
         proxy_pass http://backend/;
     }
 
-    location /_intermission {
-      content_by_lua_file /intermission/intermission_helpers.lua;
-    }
-
     location / {
-        set $intermission_interval 0.05; #seconds
-        set $intermission_max_time 300; #seconds
-        set $intermission_health_check_path /up/database;
-        set $intermission_privileged_user_agent "Pingdom";
-        access_by_lua_file /intermission/intermission.lua;
         proxy_pass http://frontend/;
     }
 
