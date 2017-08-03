@@ -52,7 +52,6 @@ services:
       - monitor-net
 
   fluentd:
-    build: ./monitor/fluentd/.
     image: thanhson1085/fluentd-es
     ports:
       - "24224:24224"
