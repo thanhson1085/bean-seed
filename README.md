@@ -1,5 +1,6 @@
 [![Gitter](https://badges.gitter.im/thanhson1085/bean-seed.svg)](https://gitter.im/thanhson1085/bean-seed?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 ![CodeShip](https://codeship.com/projects/e11c9da0-e9c1-0133-a811-5a99213623df/status?branch=master)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fthanhson1085%2Fbean-seed.svg?type=shield)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fthanhson1085%2Fbean-seed?ref=badge_shield)
 
 If you are planning to build a project with Microservices pattern and DevOps culture, you can use this source code.
 
@@ -99,3 +100,7 @@ sysctl -w vm.max_map_count=262144
 4. [Cài đặt và chạy thử MongoDB trên Ubuntu Server](https://sonnguyen.ws/vi/cai-dat-va-chay-thu-mongodb-tren-ubuntu/)
 5. [Bắt đầu với ExpressJS và Mongoose](https://sonnguyen.ws/vi/bat-dau-voi-expressjs-va-mongoose/)
 
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fthanhson1085%2Fbean-seed.svg?type=large)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fthanhson1085%2Fbean-seed?ref=badge_large)
